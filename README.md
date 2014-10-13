@@ -1,6 +1,6 @@
 # SBTextInputView
 
-[![CI Status](http://img.shields.io/travis/Elliot Schrock/SBTextInputView.svg?style=flat)](https://travis-ci.org/Elliot Schrock/SBTextInputView)
+[![CI Status](http://img.shields.io/travis/schrockblock/SBTextInputView.svg?style=flat)](https://travis-ci.org/schrockblock/SBTextInputView)
 [![Version](https://img.shields.io/cocoapods/v/SBTextInputView.svg?style=flat)](http://cocoadocs.org/docsets/SBTextInputView)
 [![License](https://img.shields.io/cocoapods/l/SBTextInputView.svg?style=flat)](http://cocoadocs.org/docsets/SBTextInputView)
 [![Platform](https://img.shields.io/cocoapods/p/SBTextInputView.svg?style=flat)](http://cocoadocs.org/docsets/SBTextInputView)
@@ -13,14 +13,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-SBTextInputView is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+To install SBTextInputView, simply add the following line to your Podfile:
 
-    pod "SBTextInputView"
+pod "SBTextInputView", :path => 'https://github.com/schrockblock/SBTextInputView'
 
 ## Author
 
-Elliot Schrock, solmundarson1@yahoo.com
+Elliot Schrock
 
 ## License
 
