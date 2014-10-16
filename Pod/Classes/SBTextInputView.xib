@@ -9,13 +9,12 @@
                 <outlet property="blurBackground" destination="fjn-YJ-fEn" id="9fP-EB-utt"/>
                 <outlet property="inputTextView" destination="Dvg-QI-D6P" id="L52-OC-uLs"/>
                 <outlet property="sendButton" destination="JoL-DL-xVd" id="ekj-ZU-PMS"/>
-                <outlet property="textViewHeight" destination="hUv-wP-ADP" id="sWa-KW-2Ze"/>
-                <outlet property="textViewWidth" destination="pwE-W3-0Rw" id="tdu-FT-aEm"/>
+                <outlet property="textViewHeight" destination="1Yh-3W-wSg" id="bD3-Oo-mni"/>
                 <outlet property="view" destination="iN0-l3-epB" id="0wO-mb-kAh"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" verticalHuggingPriority="1000" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -25,9 +24,6 @@
                 </toolbar>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JoL-DL-xVd">
                     <rect key="frame" x="260" y="-2" width="60" height="47"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="60" id="5Et-Zk-ZD5"/>
-                    </constraints>
                     <state key="normal" title="Send">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -39,26 +35,26 @@
                     <rect key="frame" x="5" y="4" width="254" height="36"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="36" id="hUv-wP-ADP"/>
-                        <constraint firstAttribute="width" constant="254" id="pwE-W3-0Rw"/>
+                        <constraint firstAttribute="height" constant="36" id="1Yh-3W-wSg"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Dvg-QI-D6P" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="5Nm-9J-yNQ"/>
-                <constraint firstAttribute="bottom" secondItem="fjn-YJ-fEn" secondAttribute="bottom" id="8yP-AO-kK4"/>
-                <constraint firstAttribute="trailing" secondItem="Dvg-QI-D6P" secondAttribute="trailing" constant="61" id="MRl-yd-8zB"/>
-                <constraint firstAttribute="bottom" secondItem="JoL-DL-xVd" secondAttribute="bottom" constant="-1" id="WAf-HH-MQx"/>
-                <constraint firstAttribute="bottom" secondItem="Dvg-QI-D6P" secondAttribute="bottom" constant="4" id="f0S-H3-PfF"/>
-                <constraint firstItem="fjn-YJ-fEn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hKe-hi-CJi"/>
-                <constraint firstAttribute="trailing" secondItem="fjn-YJ-fEn" secondAttribute="trailing" id="hav-MY-Ddu"/>
-                <constraint firstItem="JoL-DL-xVd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-2" id="kXc-OI-mJz"/>
-                <constraint firstAttribute="trailing" secondItem="JoL-DL-xVd" secondAttribute="trailing" id="o88-4l-XA1"/>
-                <constraint firstItem="fjn-YJ-fEn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qIR-6a-3Uk"/>
-                <constraint firstItem="Dvg-QI-D6P" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="t1q-WG-47F"/>
+                <constraint firstAttribute="trailing" secondItem="JoL-DL-xVd" secondAttribute="trailing" id="B9Y-rb-YeR"/>
+                <constraint firstItem="JoL-DL-xVd" firstAttribute="leading" secondItem="Dvg-QI-D6P" secondAttribute="trailing" constant="1" id="CLs-DB-l9a"/>
+                <constraint firstItem="Dvg-QI-D6P" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="HiJ-Yr-KFT"/>
+                <constraint firstAttribute="bottom" secondItem="fjn-YJ-fEn" secondAttribute="bottom" id="JyN-mH-ffD"/>
+                <constraint firstItem="fjn-YJ-fEn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VKy-5A-Npn"/>
+                <constraint firstAttribute="trailing" secondItem="fjn-YJ-fEn" secondAttribute="trailing" id="d1l-7N-0Dv"/>
+                <constraint firstAttribute="bottom" secondItem="JoL-DL-xVd" secondAttribute="bottom" constant="-1" id="f3z-6S-vP0"/>
+                <constraint firstItem="JoL-DL-xVd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-2" id="f8q-Im-pea"/>
+                <constraint firstAttribute="trailing" secondItem="Dvg-QI-D6P" secondAttribute="trailing" constant="61" id="goB-Di-mzs"/>
+                <constraint firstItem="fjn-YJ-fEn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nSj-CL-YeT"/>
+                <constraint firstAttribute="bottom" secondItem="Dvg-QI-D6P" secondAttribute="bottom" constant="4" id="vWe-c5-4nu"/>
+                <constraint firstItem="Dvg-QI-D6P" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="wIh-4t-Ks9"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

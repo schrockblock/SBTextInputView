@@ -16,7 +16,6 @@
 @property (nonatomic, strong) UITextField *hiddenTextField;
 @property (nonatomic) CGFloat contentHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeight;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewWidth;
 
 - (IBAction)sendPressed;
 @end
@@ -37,6 +36,15 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setup:nil];
+    }
+    return self;
+}
+
 - (void)setup:(UIView *)superView
 {
     [[NSBundle mainBundle] loadNibNamed:@"SBTextInputView" owner:self options:nil];
@@ -50,6 +58,8 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
                                                                  options:0
                                                                  metrics:0
                                                                    views:NSDictionaryOfVariableBindings(_view)]];
+    
+    self.backgroundColor = [UIColor clearColor];
     
     self.inputTextView.delegate = self;
     if (!self.blurBackground) {
@@ -67,25 +77,16 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
     }
     
     self.translatesAutoresizingMaskIntoConstraints = NO;
-    self.view.translatesAutoresizingMaskIntoConstraints = NO;
-    self.inputTextView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.blurBackground.translatesAutoresizingMaskIntoConstraints = NO;
-    self.sendButton.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    self.textViewWidth.constant = [[UIScreen mainScreen] bounds].size.width - self.sendButton.frame.size.width - 6;
-    for (NSLayoutConstraint *constraint in self.view.constraints) {
-        if (constraint.firstAttribute == NSLayoutAttributeLeft || constraint.firstAttribute == NSLayoutAttributeRight) {
-            self.textViewWidth.constant -= constraint.constant;
-        }
-    }
     
     [self updateLayout];
     
-    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectZero];
-    textField.hidden = YES;
-    textField.inputAccessoryView = self;
-    [superView addSubview:textField];
-    self.hiddenTextField = textField;
+    if (superView) {
+        UITextField *textField = [[UITextField alloc] initWithFrame:CGRectZero];
+        textField.hidden = YES;
+        textField.inputAccessoryView = self;
+        [superView addSubview:textField];
+        self.hiddenTextField = textField;
+    }
 }
 
 - (void)didMoveToWindow
@@ -93,8 +94,6 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
     self.inputTextView.layer.cornerRadius = 5;
     self.inputTextView.layer.borderWidth = 1;
     self.contentHeight = [self measureTextViewHeight];
-    
-    [self updateLayout];
 }
 
 // Code from apple developer forum - @Steve Krulewitz, @Mark Marszal, @Eric Silverberg
@@ -154,12 +153,15 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
 
 - (void)heightChangedBy:(CGFloat)delta
 {
-    CGRect frame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, self.frame.size.height + delta);
-    self.frame = frame;
-    [self.hiddenTextField becomeFirstResponder];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self becomeFirstResponder];
-    });
+    self.textViewHeight.constant += delta;
+    [self invalidateIntrinsicContentSize];
+    [self updateLayout];
+}
+
+- (CGSize)intrinsicContentSize
+{
+    CGSize size = CGSizeMake(self.frame.size.width, self.contentHeight > 80 ? 80 : self.contentHeight);
+    return size;
 }
 
 - (void)setButtonColor:(UIColor *)buttonColor

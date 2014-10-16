@@ -10,19 +10,19 @@
 Pod::Spec.new do |s|
   s.name             = "SBTextInputView"
   s.version          = "0.1.0"
-  s.summary          = "A short description of SBTextInputView."
+  s.summary          = "SBTextInputView is an inputAccessoryView."
   s.description      = <<-DESC
                        An optional longer description of SBTextInputView
 
                        * Markdown format.
                        * Don't worry about the indent, we strip it!
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/SBTextInputView"
+  s.homepage         = "https://github.com/schrockblock/SBTextInputView"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Elliot Schrock" => "solmundarson1@yahoo.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/SBTextInputView.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { "Elliot Schrock" => "elliot.schrock+pods@gmail.com" }
+  s.source           = { :git => "https://github.com/schrockblock/SBTextInputView.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/schrockblock'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
