@@ -103,8 +103,8 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
 
 - (BOOL)resignFirstResponder
 {
-    [self.hiddenTextField resignFirstResponder];
     [self.inputTextView resignFirstResponder];
+    [self.hiddenTextField resignFirstResponder];
     return [super resignFirstResponder];
 }
 

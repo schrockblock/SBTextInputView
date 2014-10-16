@@ -13,6 +13,8 @@
 @property (nonatomic, strong) UITextField *hiddenTextField;
 @property (nonatomic, strong) SBTextInputView *replyView;
 
+- (IBAction)dismiss;
+- (IBAction)show;
 @end
 
 @implementation SBViewController
@@ -23,8 +25,15 @@
     
     self.replyView = [[SBTextInputView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 44) superView:self.view delegate:self];
     self.replyView.inputTextView.text = @"mmmmmmmmmmmmmmmmmmm";
-    
-    [self.replyView becomeFirstResponder];
 }
 
+- (IBAction)dismiss
+{
+    [self.replyView resignFirstResponder];
+}
+
+- (IBAction)show
+{
+    [self.replyView becomeFirstResponder];
+}
 @end
