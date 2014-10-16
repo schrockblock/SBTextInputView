@@ -7,8 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SBTextInputView">
             <connections>
                 <outlet property="blurBackground" destination="fjn-YJ-fEn" id="9fP-EB-utt"/>
+                <outlet property="button" destination="JoL-DL-xVd" id="fQk-DK-evb"/>
                 <outlet property="inputTextView" destination="Dvg-QI-D6P" id="L52-OC-uLs"/>
-                <outlet property="sendButton" destination="JoL-DL-xVd" id="ekj-ZU-PMS"/>
                 <outlet property="textViewHeight" destination="1Yh-3W-wSg" id="bD3-Oo-mni"/>
                 <outlet property="view" destination="iN0-l3-epB" id="0wO-mb-kAh"/>
             </connections>

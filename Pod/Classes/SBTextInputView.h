@@ -16,10 +16,9 @@
 
 @interface SBTextInputView : UIView
 @property (nonatomic, weak) NSObject<SBTextInputViewDelegate> *delegate;
-@property (nonatomic, strong) NSString *text;
-@property (nonatomic, strong) UIColor *buttonColor;
-@property (nonatomic, strong) NSString *buttonText;
-@property (nonatomic, strong) UIColor *textViewBorderColor;
+@property (strong, nonatomic) IBOutlet UITextView *inputTextView;
+@property (strong, nonatomic) IBOutlet UIButton *button;
+@property (strong, nonatomic) IBOutlet UIToolbar *blurBackground;
 
 - (id)initWithFrame:(CGRect)frame superView:(UIView *)superView delegate:(NSObject<SBTextInputViewDelegate> *)delegate;
 @end

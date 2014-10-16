@@ -10,9 +10,6 @@
 
 @interface SBTextInputView () <UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UIView *view;
-@property (strong, nonatomic) IBOutlet UITextView *inputTextView;
-@property (strong, nonatomic) IBOutlet UIButton *sendButton;
-@property (strong, nonatomic) IBOutlet UIToolbar *blurBackground;
 @property (nonatomic, strong) UITextField *hiddenTextField;
 @property (nonatomic) CGFloat contentHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeight;
@@ -91,8 +88,6 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
 
 - (void)didMoveToWindow
 {
-    self.inputTextView.layer.cornerRadius = 5;
-    self.inputTextView.layer.borderWidth = 1;
     self.contentHeight = [self measureTextViewHeight];
 }
 
@@ -135,22 +130,6 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
     [self layoutIfNeeded];
 }
 
-- (NSString *)text
-{
-    return self.inputTextView.text;
-}
-
-- (void)setText:(NSString *)text
-{
-    self.inputTextView.text = text;
-}
-
-- (void)setButtonText:(NSString *)buttonText
-{
-    self.sendButton.titleLabel.text = buttonText;
-    [self updateLayout];
-}
-
 - (void)heightChangedBy:(CGFloat)delta
 {
     self.textViewHeight.constant += delta;
@@ -162,18 +141,6 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
 {
     CGSize size = CGSizeMake(self.frame.size.width, self.contentHeight > 80 ? 80 : self.contentHeight);
     return size;
-}
-
-- (void)setButtonColor:(UIColor *)buttonColor
-{
-    _buttonColor = buttonColor;
-    self.sendButton.tintColor = buttonColor;
-}
-
-- (void)setTextViewBorderColor:(UIColor *)textViewBorderColor
-{
-    _textViewBorderColor = textViewBorderColor;
-    self.inputTextView.layer.borderColor = textViewBorderColor.CGColor;
 }
 
 #pragma mark - UITextViewDelegate
