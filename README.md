@@ -15,7 +15,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 To install SBTextInputView, simply add the following line to your Podfile:
 
-pod "SBTextInputView", :path => 'https://github.com/schrockblock/SBTextInputView'
+pod "SBTextInputView", :git => 'https://github.com/schrockblock/SBTextInputView'
 
 ## Author
 
