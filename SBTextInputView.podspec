@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SBTextInputView"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "SBTextInputView is a view and inputAccessoryView which auto resizes based on amount of text."
   s.description      = <<-DESC
                        An optional longer description of SBTextInputView
