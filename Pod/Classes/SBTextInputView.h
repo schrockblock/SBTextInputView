@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class SBTextInputView;
+@class SBBlurView;
 
 @protocol SBTextInputViewDelegate
 @optional
@@ -18,7 +19,7 @@
 @property (nonatomic, weak) NSObject<SBTextInputViewDelegate> *delegate;
 @property (strong, nonatomic) IBOutlet UITextView *inputTextView;
 @property (strong, nonatomic) IBOutlet UIButton *button;
-@property (strong, nonatomic) IBOutlet UIToolbar *blurBackground;
+@property (strong, nonatomic) IBOutlet SBBlurView *blurBackground;
 
 - (id)initWithFrame:(CGRect)frame superView:(UIView *)superView delegate:(NSObject<SBTextInputViewDelegate> *)delegate;
 @end

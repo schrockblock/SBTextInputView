@@ -16,6 +16,8 @@
 		49160A7019EB66D500794F93 /* SBTextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49160A6D19EB66D500794F93 /* SBTextInputView.m */; };
 		49160A7119EB66D500794F93 /* SBTextInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49160A6E19EB66D500794F93 /* SBTextInputView.xib */; };
 		49160A7219EB66D500794F93 /* SBTextInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49160A6E19EB66D500794F93 /* SBTextInputView.xib */; };
+		493E84C51A30BDC90098F49C /* SBBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493E84C41A30BDC90098F49C /* SBBlurView.m */; };
+		493E84C61A30BDC90098F49C /* SBBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493E84C41A30BDC90098F49C /* SBBlurView.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -52,6 +54,8 @@
 		49160A6C19EB66D400794F93 /* SBTextInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBTextInputView.h; path = ../../Pod/Classes/SBTextInputView.h; sourceTree = "<group>"; };
 		49160A6D19EB66D500794F93 /* SBTextInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBTextInputView.m; path = ../../Pod/Classes/SBTextInputView.m; sourceTree = "<group>"; };
 		49160A6E19EB66D500794F93 /* SBTextInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SBTextInputView.xib; path = ../../Pod/Classes/SBTextInputView.xib; sourceTree = "<group>"; };
+		493E84C31A30BDC90098F49C /* SBBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBBlurView.h; path = ../../Pod/Classes/SBBlurView.h; sourceTree = "<group>"; };
+		493E84C41A30BDC90098F49C /* SBBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBBlurView.m; path = ../../Pod/Classes/SBBlurView.m; sourceTree = "<group>"; };
 		55BC4753356DB47F9FE1FB94 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* SBTextInputView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SBTextInputView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -142,6 +146,8 @@
 				49160A6C19EB66D400794F93 /* SBTextInputView.h */,
 				49160A6D19EB66D500794F93 /* SBTextInputView.m */,
 				49160A6E19EB66D500794F93 /* SBTextInputView.xib */,
+				493E84C31A30BDC90098F49C /* SBBlurView.h */,
+				493E84C41A30BDC90098F49C /* SBBlurView.m */,
 				6003F59C195388D20070C39A /* SBAppDelegate.h */,
 				6003F59D195388D20070C39A /* SBAppDelegate.m */,
 				49160A6519EB637D00794F93 /* SBViewController.h */,
@@ -379,6 +385,7 @@
 				49160A6819EB637D00794F93 /* SBViewController.m in Sources */,
 				49160A6F19EB66D500794F93 /* SBTextInputView.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				493E84C51A30BDC90098F49C /* SBBlurView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493E84C61A30BDC90098F49C /* SBBlurView.m in Sources */,
 				6003F5BC195388D20070C39A /* Tests.m in Sources */,
 				49160A6919EB637D00794F93 /* SBViewController.m in Sources */,
 				49160A7019EB66D500794F93 /* SBTextInputView.m in Sources */,
@@ -500,8 +508,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Todd Elliot Schrock (RY2U2EZS76)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Todd Elliot Schrock (RY2U2EZS76)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SBTextInputView/SBTextInputView-Prefix.pch";
 				INFOPLIST_FILE = "SBTextInputView/SBTextInputView-Info.plist";
@@ -519,8 +527,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Todd Elliot Schrock (RY2U2EZS76)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Todd Elliot Schrock (RY2U2EZS76)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SBTextInputView/SBTextInputView-Prefix.pch";
 				INFOPLIST_FILE = "SBTextInputView/SBTextInputView-Info.plist";

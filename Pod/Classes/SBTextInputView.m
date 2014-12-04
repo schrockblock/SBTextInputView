@@ -7,6 +7,7 @@
 //
 
 #import "SBTextInputView.h"
+#import "SBBlurView.h"
 
 @interface SBTextInputView () <UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UIView *view;
@@ -47,6 +48,9 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
     [[NSBundle mainBundle] loadNibNamed:@"SBTextInputView" owner:self options:nil];
     [self addSubview:self.view];
     
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    self.view.translatesAutoresizingMaskIntoConstraints = NO;
+    
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_view]|"
                                                                  options:0
                                                                  metrics:0
@@ -59,8 +63,10 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
     self.backgroundColor = [UIColor clearColor];
     
     self.inputTextView.delegate = self;
+    self.textViewHeight.constant = self.frame.size.height - 2 * self.inputTextView.frame.origin.y;
+    
     if (!self.blurBackground) {
-        self.blurBackground = [[UIToolbar alloc] initWithFrame:self.bounds];
+        self.blurBackground = [[SBBlurView alloc] initWithFrame:self.bounds];
         [self insertSubview:self.blurBackground atIndex:0];
         
         [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_blurBackground]|"
@@ -72,8 +78,6 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
                                                                      metrics:0
                                                                        views:NSDictionaryOfVariableBindings(_blurBackground)]];
     }
-    
-    self.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self updateLayout];
     
@@ -139,7 +143,11 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
 
 - (CGSize)intrinsicContentSize
 {
-    CGSize size = CGSizeMake(self.frame.size.width, self.contentHeight > 80 ? 80 : self.contentHeight);
+    CGFloat height = self.contentHeight + 2 * self.inputTextView.frame.origin.y;
+    if (height > SBTextInputViewMaxHeight) {
+        height = SBTextInputViewMaxHeight;
+    }
+    CGSize size = CGSizeMake(self.frame.size.width, height);
     return size;
 }
 
@@ -148,11 +156,10 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
 - (void)textViewDidChange:(UITextView *)textView
 {
     CGFloat height = [self measureTextViewHeight];
-    if (self.contentHeight != height && height <= SBTextInputViewMaxHeight) {
+    if (self.contentHeight != height && height <= SBTextInputViewMaxHeight - 2 * self.inputTextView.frame.origin.y) {
         CGFloat deltaHeight = height - self.contentHeight;
         [self heightChangedBy:deltaHeight];
         
-        self.textViewHeight.constant = height;
         self.contentHeight = height;
         
         [self updateLayout];

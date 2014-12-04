@@ -23,7 +23,7 @@
 {
     [super viewDidLoad];
     
-    self.replyView = [[SBTextInputView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 44) superView:self.view delegate:self];
+    self.replyView = [[SBTextInputView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 35) superView:self.view delegate:self];
     self.replyView.inputTextView.text = @"mmmmmmmmmmmmmmmmmmm";
 }
 
