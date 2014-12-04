@@ -9,8 +9,8 @@
 
 Pod::Spec.new do |s|
   s.name             = "SBTextInputView"
-  s.version          = "0.1.0"
-  s.summary          = "SBTextInputView is an inputAccessoryView."
+  s.version          = "0.1.1"
+  s.summary          = "SBTextInputView is a view and inputAccessoryView which auto resizes based on amount of text."
   s.description      = <<-DESC
                        An optional longer description of SBTextInputView
 
@@ -28,6 +28,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes'
+  s.resources = 'Pod/Classes/*.xib'
   s.resource_bundles = {
     'SBTextInputView' => ['Pod/Assets/*.png']
   }

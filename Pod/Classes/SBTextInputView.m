@@ -92,17 +92,7 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
 
 - (void)didMoveToWindow
 {
-    self.contentHeight = [self measureTextViewHeight];
-}
-
-// Code from apple developer forum - @Steve Krulewitz, @Mark Marszal, @Eric Silverberg
-- (CGFloat)measureTextViewHeight
-{
-    if ([self respondsToSelector:@selector(snapshotViewAfterScreenUpdates:)]) {
-        return ceilf([self.inputTextView sizeThatFits:self.inputTextView.frame.size].height);
-    }else {
-        return self.inputTextView.contentSize.height;
-    }
+    self.contentHeight = self.inputTextView.contentSize.height;
 }
 
 - (BOOL)resignFirstResponder
@@ -136,9 +126,11 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
 
 - (void)heightChangedBy:(CGFloat)delta
 {
-    self.textViewHeight.constant += delta;
-    [self invalidateIntrinsicContentSize];
-    [self updateLayout];
+    if (delta) {
+        self.textViewHeight.constant += delta;
+        [self invalidateIntrinsicContentSize];
+        [self updateLayout];
+    }
 }
 
 - (CGSize)intrinsicContentSize
@@ -155,7 +147,7 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    CGFloat height = [self measureTextViewHeight];
+    CGFloat height = self.inputTextView.contentSize.height;
     if (self.contentHeight != height && height <= SBTextInputViewMaxHeight - 2 * self.inputTextView.frame.origin.y) {
         CGFloat deltaHeight = height - self.contentHeight;
         [self heightChangedBy:deltaHeight];
@@ -165,6 +157,8 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
         [self updateLayout];
     }
 }
+
+#pragma mark - actions
 
 - (IBAction)sendPressed
 {
