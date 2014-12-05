@@ -8,6 +8,7 @@
 
 #import "SBViewController.h"
 #import "SBTextInputView.h"
+#import "SBBlurView.h"
 
 @interface SBViewController () <SBTextInputViewDelegate>
 @property (nonatomic, strong) UITextField *hiddenTextField;
@@ -15,6 +16,7 @@
 
 - (IBAction)dismiss;
 - (IBAction)show;
+- (IBAction)reset;
 @end
 
 @implementation SBViewController
@@ -23,8 +25,7 @@
 {
     [super viewDidLoad];
     
-    self.replyView = [[SBTextInputView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 35) superView:self.view delegate:self];
-    self.replyView.inputTextView.text = @"mmmmmmmmmmmmmmmmmmm";
+    self.replyView = [[SBTextInputView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 44) superView:self.view delegate:self];
     [self.replyView.button setTitle:@"Post" forState:UIControlStateNormal];
     
     self.replyView.inputTextView.layer.borderColor = [UIColor colorWithRed:175.0f/255.0f green:172.0f/255.0f blue:181.0f/255.0f alpha:1].CGColor;
@@ -46,4 +47,11 @@
 {
     [self.replyView becomeFirstResponder];
 }
+
+- (IBAction)reset
+{
+    self.replyView.inputTextView.text = @"";
+    [self.replyView notifyTextChange];
+}
+
 @end

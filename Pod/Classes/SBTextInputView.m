@@ -92,7 +92,9 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
 
 - (void)didMoveToWindow
 {
+    [self.inputTextView layoutIfNeeded];
     self.contentHeight = self.inputTextView.contentSize.height;
+    [self invalidateIntrinsicContentSize];
 }
 
 - (BOOL)resignFirstResponder
@@ -109,6 +111,14 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
         [self.inputTextView becomeFirstResponder];
     });
     return [super becomeFirstResponder];
+}
+
+- (void)notifyTextChange
+{
+    [self.inputTextView layoutIfNeeded];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self textViewDidChange:self.inputTextView];
+    });
 }
 
 - (void)updateLayout

@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SBTextInputView"
-  s.version          = "0.1.2"
+  s.version          = "0.1.3"
   s.summary          = "SBTextInputView is a view and inputAccessoryView which auto resizes based on the amount of text."
   s.description      = <<-DESC
                         ## Usage
@@ -42,6 +42,8 @@ Pod::Spec.new do |s|
                         If you'd like to make this an inputAccessoryView of something else, just pass in `nil` for the superView param in the constructor, and treat it like any other view.
 
                         All the subviews are exposed properties, so you can style them any way you'd like. The background is a lightweight subclass of `UIToolbar` which overrides some of its more annoying behavior.
+
+                        You might also like to edit the text programmatically (perhaps reseting the text to @"") and have the view size appropriately. To do this, just set the inputTextView.text as desired, then call `notifyTextChanged` on the `SBTextInputView`.
                        DESC
   s.homepage         = "https://github.com/schrockblock/SBTextInputView"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"

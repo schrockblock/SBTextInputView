@@ -34,6 +34,8 @@ If you'd like to make this an inputAccessoryView of something else, just pass in
 
 All the subviews are exposed properties, so you can style them any way you'd like. The background is a lightweight subclass of `UIToolbar` which overrides some of its more annoying behavior.
 
+You might also like to edit the text programmatically (perhaps reseting the text to @"") and have the view size appropriately. To do this, just set the inputTextView.text as desired, then call `notifyTextChanged` on the `SBTextInputView`.
+
 ## Author
 
 Elliot Schrock

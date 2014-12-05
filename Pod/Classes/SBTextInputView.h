@@ -22,4 +22,5 @@
 @property (strong, nonatomic) IBOutlet SBBlurView *blurBackground;
 
 - (id)initWithFrame:(CGRect)frame superView:(UIView *)superView delegate:(NSObject<SBTextInputViewDelegate> *)delegate;
+- (void)notifyTextChange;
 @end
