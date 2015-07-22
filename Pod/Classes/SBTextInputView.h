@@ -13,12 +13,16 @@
 @protocol SBTextInputViewDelegate
 @optional
 - (void)textInputButtonPressed:(NSString *)text;
+- (void)leftTextInputButtonPressed;
 @end
 
 @interface SBTextInputView : UIView
 @property (nonatomic, weak) NSObject<SBTextInputViewDelegate> *delegate;
 @property (strong, nonatomic) IBOutlet UITextView *inputTextView;
 @property (strong, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UIButton *leftButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftButtonWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftButtonLeftMargin;
 @property (strong, nonatomic) IBOutlet SBBlurView *blurBackground;
 
 - (id)initWithFrame:(CGRect)frame superView:(UIView *)superView delegate:(NSObject<SBTextInputViewDelegate> *)delegate;

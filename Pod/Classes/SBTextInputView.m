@@ -171,9 +171,14 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
 
 #pragma mark - actions
 
-- (IBAction)sendPressed:(id)sender
+- (IBAction)sendPressed
 {
     if ([self.delegate respondsToSelector:@selector(textInputButtonPressed:)]) [self.delegate textInputButtonPressed:self.inputTextView.text];
+}
+
+- (IBAction)leftButtonPressed
+{
+    if ([self.delegate respondsToSelector:@selector(leftTextInputButtonPressed)]) [self.delegate leftTextInputButtonPressed];
 }
 
 @end

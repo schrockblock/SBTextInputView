@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SBTextInputView">
@@ -9,6 +9,9 @@
                 <outlet property="blurBackground" destination="fjn-YJ-fEn" id="9fP-EB-utt"/>
                 <outlet property="button" destination="JoL-DL-xVd" id="fQk-DK-evb"/>
                 <outlet property="inputTextView" destination="Dvg-QI-D6P" id="L52-OC-uLs"/>
+                <outlet property="leftButton" destination="Veb-Vl-ycS" id="wj8-zo-LBU"/>
+                <outlet property="leftButtonLeftMargin" destination="i7u-ur-dN6" id="nX5-Az-MaC"/>
+                <outlet property="leftButtonWidthConstraint" destination="u6u-TL-Fmu" id="tfD-B6-Eoy"/>
                 <outlet property="textViewHeight" destination="mtd-S3-sih" id="wXG-RX-DGD"/>
                 <outlet property="view" destination="iN0-l3-epB" id="0wO-mb-kAh"/>
             </connections>
@@ -22,13 +25,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                     <items/>
                 </toolbar>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JoL-DL-xVd">
-                    <rect key="frame" x="260" y="-2" width="60" height="48"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JoL-DL-xVd">
+                    <rect key="frame" x="260" y="0.0" width="60" height="40"/>
                     <state key="normal" title="Send">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="sendPressed:" destination="-1" eventType="touchUpInside" id="dy3-G5-W3N"/>
+                        <action selector="sendPressed" destination="-1" eventType="touchUpInside" id="DKH-bj-bAy"/>
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Dvg-QI-D6P">
@@ -40,25 +43,40 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Veb-Vl-ycS">
+                    <rect key="frame" x="0.0" y="5" width="0.0" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="IBn-TC-TUc"/>
+                        <constraint firstAttribute="width" id="u6u-TL-Fmu"/>
+                    </constraints>
+                    <state key="normal" title="Img">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="leftButtonPressed" destination="-1" eventType="touchUpInside" id="omP-NO-5dg"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="JoL-DL-xVd" secondAttribute="trailing" id="B9Y-rb-YeR"/>
                 <constraint firstItem="JoL-DL-xVd" firstAttribute="leading" secondItem="Dvg-QI-D6P" secondAttribute="trailing" constant="1" id="CLs-DB-l9a"/>
-                <constraint firstItem="Dvg-QI-D6P" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="HiJ-Yr-KFT"/>
+                <constraint firstItem="JoL-DL-xVd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Fq4-Hp-MDa"/>
                 <constraint firstAttribute="bottom" secondItem="fjn-YJ-fEn" secondAttribute="bottom" id="JyN-mH-ffD"/>
+                <constraint firstAttribute="centerY" secondItem="Veb-Vl-ycS" secondAttribute="centerY" id="MO3-LC-eaz"/>
                 <constraint firstItem="fjn-YJ-fEn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VKy-5A-Npn"/>
+                <constraint firstItem="Dvg-QI-D6P" firstAttribute="leading" secondItem="Veb-Vl-ycS" secondAttribute="trailing" constant="5" id="YpF-De-YFu"/>
                 <constraint firstAttribute="trailing" secondItem="fjn-YJ-fEn" secondAttribute="trailing" id="d1l-7N-0Dv"/>
-                <constraint firstAttribute="bottom" secondItem="JoL-DL-xVd" secondAttribute="bottom" constant="-1" id="f3z-6S-vP0"/>
-                <constraint firstItem="JoL-DL-xVd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-2" id="f8q-Im-pea"/>
+                <constraint firstAttribute="bottom" secondItem="JoL-DL-xVd" secondAttribute="bottom" id="f3z-6S-vP0"/>
                 <constraint firstAttribute="trailing" secondItem="Dvg-QI-D6P" secondAttribute="trailing" constant="61" id="goB-Di-mzs"/>
+                <constraint firstItem="Veb-Vl-ycS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="i7u-ur-dN6"/>
                 <constraint firstItem="fjn-YJ-fEn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nSj-CL-YeT"/>
                 <constraint firstAttribute="bottom" secondItem="Dvg-QI-D6P" secondAttribute="bottom" constant="4" id="vWe-c5-4nu"/>
                 <constraint firstItem="Dvg-QI-D6P" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="wIh-4t-Ks9"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="276" y="194.5"/>
+            <point key="canvasLocation" x="626" y="383"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
