@@ -46,7 +46,7 @@ static CGFloat const SBTextInputViewMaxHeight = 80;
 
 - (void)setup:(UIView *)superView
 {
-    [[NSBundle mainBundle] loadNibNamed:@"SBTextInputView" owner:self options:nil];
+    [[NSBundle bundleForClass:[SBTextInputView class]] loadNibNamed:@"SBTextInputView" owner:self options:nil];
     [self addSubview:self.view];
     
     self.translatesAutoresizingMaskIntoConstraints = NO;
