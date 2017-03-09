@@ -15,8 +15,6 @@
 @property (nonatomic) CGFloat contentHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeight;
 
-- (IBAction)sendPressed:(id)sender;
-
 @end
 
 static CGFloat const SBTextInputViewMaxHeight = 80;

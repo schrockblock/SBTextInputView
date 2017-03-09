@@ -48,7 +48,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/schrockblock/SBTextInputView"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Elliot Schrock" => "elliot.schrock+pods@gmail.com" }
+  s.author           = { "Elliot Schrock" => "" }
   s.source           = { :git => "https://github.com/schrockblock/SBTextInputView.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/schrockblock'
 
@@ -57,11 +57,4 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes'
   s.resources = 'Pod/Classes/*.xib'
-  s.resource_bundles = {
-    'SBTextInputView' => ['Pod/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
