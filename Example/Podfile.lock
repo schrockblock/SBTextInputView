@@ -1,28 +1,29 @@
 PODS:
-  - Expecta (0.3.1)
-  - Expecta+Snapshots (1.2.1):
-    - Expecta
-    - FBSnapshotTestCase
-  - FBSnapshotTestCase (1.2)
-  - SBTextInputView (0.1.1)
-  - Specta (0.2.1)
+  - Expecta (1.0.5)
+  - Expecta+Snapshots (2.0.0):
+    - Expecta (~> 1.0)
+    - FBSnapshotTestCase/Core (~> 2.0.3)
+  - FBSnapshotTestCase/Core (2.0.7)
+  - SBTextInputView (0.2.0)
+  - Specta (1.0.6)
 
 DEPENDENCIES:
   - Expecta
   - Expecta+Snapshots
-  - FBSnapshotTestCase
   - SBTextInputView (from `../`)
-  - Specta (~> 0.2.1)
+  - Specta
 
 EXTERNAL SOURCES:
   SBTextInputView:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
-  Expecta+Snapshots: 30c28e3d8104665ee70e32df1cfc030bb37a8a6c
-  FBSnapshotTestCase: 4159bdf235fdae25aa7d813f1452a4f05ad4f9cd
-  SBTextInputView: a76ff8de1063652ec62e14dfba4f5a918cac5720
-  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
+  Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
+  Expecta+Snapshots: 29b38dd695bc72a0ed2bea833937d78df41943ba
+  FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
+  SBTextInputView: 87816d06b0ac97deacbfa9a27545e0ab9cd70165
+  Specta: f506f3a8361de16bc0dcf3b17b75e269072ba465
 
-COCOAPODS: 0.34.4
+PODFILE CHECKSUM: e517a96684d02462876c4ee7a9955f9c4819cdfe
+
+COCOAPODS: 1.2.0

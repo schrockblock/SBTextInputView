@@ -1,14 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-target 'SBTextInputView', :exclusive => true do
+target 'SBTextInputView' do
   pod 'SBTextInputView', :path => '../'
 end
 
-target 'Tests', :exclusive => true do
+target 'Tests' do
   pod 'SBTextInputView', :path => '../'
 
-  pod 'Specta', '~> 0.2.1'
+  pod 'Specta'
   pod 'Expecta'
-  pod 'FBSnapshotTestCase'
   pod 'Expecta+Snapshots'
 end
